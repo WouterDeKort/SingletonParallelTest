@@ -13,12 +13,13 @@ namespace Singleton.Test
 	}
 	public class MySingleton : IMySingleton
     {
-        private static readonly ThreadLocal<IMySingleton> instance = new ThreadLocal<IMySingleton>(() => new MySingleton());
+        private static readonly AsyncLocal<IMySingleton> instance = new AsyncLocal<IMySingleton>();
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
         static MySingleton()
         {
+            
         }
 
         private MySingleton()
@@ -28,7 +29,8 @@ namespace Singleton.Test
         public static IMySingleton Instance
         {
             get
-            {               
+            {
+                if (instance.Value == null) instance.Value = new MySingleton();
                 return instance.Value;
             }
         }
