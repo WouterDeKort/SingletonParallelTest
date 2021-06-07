@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Singleton.Test
 {
-	internal interface IMySingleton
-	{
-        int Increase();
-	}
-	public class MySingleton : IMySingleton
+    public interface IMySingleton
     {
-        private static readonly MySingleton instance = new MySingleton();
+        Task<int> Increase();
+    }
+    public class MySingleton : IMySingleton
+    {
+        private static readonly IMySingleton instance = new MySingleton();
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
@@ -24,7 +25,7 @@ namespace Singleton.Test
         {
         }
 
-        public static MySingleton Instance
+        public static IMySingleton Instance
         {
             get
             {
@@ -33,10 +34,10 @@ namespace Singleton.Test
         }
 
         private int _value;
-		public int Increase()
-		{
+        public Task<int> Increase()
+        {
             _value++;
-            return _value;
-		}
-	}
-}		
+            return Task.FromResult(_value);
+        }
+    }
+}

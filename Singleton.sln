@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton.Test", "Singleton.Test\Singleton.Test.csproj", "{FBB7A280-2575-497E-B9C8-B033794D1022}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton.Test.Bad", "Singleton.Test\Singleton.Test.Bad.csproj", "{FBB7A280-2575-497E-B9C8-B033794D1022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton.Test.Parallel", "Singleton.Test.Parallel\Singleton.Test.Parallel.csproj", "{2CCA0CD7-45B1-4FEB-966C-31C77BE2F916}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton.Test.OK", "Singleton.Test.Parallel\Singleton.Test.OK.csproj", "{2CCA0CD7-45B1-4FEB-966C-31C77BE2F916}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
